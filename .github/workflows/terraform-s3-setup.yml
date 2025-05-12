@@ -34,7 +34,5 @@ jobs:
       - name: Create S3 bucket if not exists
         if: steps.check_bucket.outputs.exists == 'false'
         run: |
-          aws s3api create-bucket --bucket meu-bucket-terraform-state --region us-east-1 --create-bucket-configuration LocationConstraint=us-east-1
+          aws s3api create-bucket --bucket meu-bucket-terraform-state --region us-east-1
           aws s3api put-bucket-versioning --bucket meu-bucket-terraform-state --versioning-configuration Status=Enabled
-
-
