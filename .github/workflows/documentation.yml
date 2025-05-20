@@ -2,6 +2,8 @@ name: Generate terraform docs
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write # Needed to push changes back to the PR
 jobs:
   docs:
     runs-on: ubuntu-latest
